@@ -5,252 +5,268 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Onboarding</title>
     <link rel="stylesheet" href="stepform.css">
-
-    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
+    <h2 class="title">EMPLOYEE ONBOARDING FORM</h2>
 
-<h2 class="title">EMPLOYEE ONBOARDING FORM</h2>
-
-<!-- STEPPER -->
-<div class="stepper">
-    <div class="step active">
-        <span class="circle">1</span>
-        <p>Personal</p>
-    </div>
-    <div class="step">
-        <span class="circle">2</span>
-        <p>Experience</p>
-    </div>
-    <div class="step">
-        <span class="circle">3</span>
-        <p>Educational</p>
-    </div>
-    <div class="step">
-        <span class="circle">4</span>
-        <p>Priview&Submit</p>
-    </div>
-</div>
-
-<div class="form-container">
-
-    <!-- STEP 1 : PERSONAL -->
-    <div class="form" id="step1">
-        <h3>Personal Information</h3>
-        <div class="f1">
-            <label>First Name <span class="req">*</span></label>
-            <input type="text" id="firstName" placeholder="Enter Your First Name">
-            <small class="error"></small>
+    <!-- STEPPER -->
+    <div class="stepper">
+        <div class="step active">
+            <span class="circle">1</span>
+            <p>Personal</p>
         </div>
-        <div class="f1">
-            <label>Last Name <span class="req">*</span></label>
-            <input type="text" id="lastName" placeholder="Enter Your Last Name">
-            <small class="error"></small>
+        <div class="step">
+            <span class="circle">2</span>
+            <p>Experience</p>
         </div>
-        <div class="f1">
-            <label>Email <span class="req">*</span></label>
-            <input type="email" id="email" placeholder="Enter Your Email">
-            <small class="error"></small>
+        <div class="step">
+            <span class="circle">3</span>
+            <p>Educational</p>
         </div>
-        <div class="f1">
-            <label>Mobile No <span class="req">*</span></label>
-            <input type="text" id="mobile" placeholder="Enter Your Mobile No">
-            <small class="error"></small>
-        </div>
-        <div class="f1">
-            <label>Date Of Birth <span class="req">*</span></label>
-            <input type="date" id="dob" placeholder="Enter Your DOB">
-            <small class="error"></small>
-        </div>
-        <div class="f1">
-            <label>Present Address <span class="req">*</span></label>
-            <textarea id="presentAddress" placeholder="Enter Your Present Address"></textarea>
-            <small class="error"></small>
-        </div>
-        <div class="checkbox-row">
-            <input type="checkbox" id="sameAddress">
-            <label for="sameAddress">Permanent Address same as Present Address</label>
-        </div>
-        <div class="f1">
-            <label>Permanent Address <span class="req">*</span></label>
-            <textarea id="permanentAddress"  placeholder="Enter Your Permanent Address"></textarea>
-            <small class="error"></small>
-        </div>
-        <div class="btn">
-            <button type="button" onclick="validatePersonal()">Next</button>
+        <div class="step">
+            <span class="circle">4</span>
+            <p>Preview&Submit</p>
         </div>
     </div>
 
-    <!-- STEP 2 : EXPERIENCE -->
-    <div class="form" id="step2">
-        <h3>Experience Information</h3>
-        <div class="f1">
-            <label>Total Experience (Years) <span class="req">*</span></label>
-            <input type="text" id="totalExperience" placeholder="Enter Your Experience in Years">
-            <small class="error"></small>
+    <div class="form-container">
+        <!-- STEP 1 : PERSONAL -->
+        <div class="form" id="step1">
+            <div class="personal-block">
+                <h4>Personal Information <span class="req">*</span></h4>
+
+                <div class="personal-row">
+                    <div class="f1">
+                        <label>First Name <span class="req">*</span></label>
+                        <input type="text" id="firstName" placeholder="Enter Your First Name">
+                        <small class="error"></small>
+                    </div>
+                    <div class="f1">
+                        <label>Last Name <span class="req">*</span></label>
+                        <input type="text" id="lastName" placeholder="Enter Your Last Name">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="personal-row">
+                    <div class="f1">
+                        <label>Email <span class="req">*</span></label>
+                        <input type="email" id="email" placeholder="Enter Your Email">
+                        <small class="error"></small>
+                    </div>
+                    <div class="f1">
+                        <label>Mobile No <span class="req">*</span></label>
+                        <input type="text" id="mobile" placeholder="Enter Your Mobile No">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="personal-row">
+                    <div class="f1">
+                        <label>Gender <span class="req">*</span></label>
+                        <select id="gender">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                    <div class="f1">
+                        <label>Date Of Birth <span class="req">*</span></label>
+                        <input type="date" id="dob">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="personal-row">
+                    <div class="f1 full-width">
+                        <label>Present Address <span class="req">*</span></label>
+                        <textarea id="presentAddress" placeholder="Enter Your Present Address"></textarea>
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="checkbox-row">
+                    <input type="checkbox" id="sameAddress">
+                    <label for="sameAddress">Permanent Address same as Present Address</label>
+                </div>
+
+                <div class="f1 full-width">
+                    <label>Permanent Address <span class="req">*</span></label>
+                    <textarea id="permanentAddress" placeholder="Enter Your Permanent Address"></textarea>
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button type="button" onclick="validatePersonal()">Next</button>
+            </div>
         </div>
-        <div class="f1">
-            <label>Company Name <span class="req">*</span></label>
-            <input type="text" id="companyName" placeholder="Enter Your Company Name">
-            <small class="error"></small>
+
+        <!-- STEP 2 : EXPERIENCE -->
+        <div class="form" id="step2">
+            <h3>Experience Information</h3>
+
+            <!-- Primary Experience (Required) -->
+            <div class="experience-block" id="exp-block-1">
+                <h4>Primary Experience <span class="req">*</span></h4>
+                <div class="f1">
+                    <label>Company Name <span class="req">*</span></label>
+                    <input type="text" id="companyName1" placeholder="Enter Your Company Name">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Designation <span class="req">*</span></label>
+                    <input type="text" id="designation1" placeholder="Enter Your Designation">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Total Experience (Years) <span class="req">*</span></label>
+                    <input type="number" id="totalExperience1" placeholder="Enter Your Experience in Years" min="0" max="50">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Employment Type <span class="req">*</span></label>
+                    <select id="employmentType1">
+                        <option value="" disabled selected>Select</option>
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Contract</option>
+                        <option>Intern</option>
+                    </select>
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Joining Date <span class="req">*</span></label>
+                    <input type="date" id="joiningDate1">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Last Working Date <span class="req">*</span></label>
+                    <input type="date" id="lastWorkingDate1">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Skills / Technologies <span class="req">*</span></label>
+                    <input type="text" id="skills1" placeholder="EX: HTML, CSS, JavaScript">
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <div id="experienceContainer"></div>
+            <button type="button" class="add-btn" onclick="addExperience()">+ Add Another Experience (Optional)</button>
+
+            <div class="btn-group">
+                <button type="button" onclick="showStep(1)">Previous</button>
+                <button type="button" onclick="validateExperience()">Next</button>
+            </div>
         </div>
-        <div class="f1">
-            <label>Designation <span class="req">*</span></label>
-            <input type="text" id="designation" placeholder="Enter Your Designation">
-            <small class="error"></small>
+
+        <!-- STEP 3 : EDUCATION -->
+        <div class="form" id="step3">
+            <h3>Educational Information</h3>
+            
+            <!-- Primary Education (Required) -->
+            <div class="education-block" id="edu-block-1">
+                <h4>Primary Qualification <span class="req">*</span></h4>
+                <div class="f1">
+                    <label>Highest Qualification <span class="req">*</span></label>
+                    <select id="qualification">
+                        <option value="" disabled selected>Select</option>
+                        <option>Diploma</option>
+                        <option>Bachelor's</option>
+                        <option>Master's</option>
+                        <option>PhD</option>
+                    </select>
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Degree <span class="req">*</span></label>
+                    <input type="text" id="degree" placeholder="EX: B.Tech, B.A, M.Sc">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Specialization <span class="req">*</span></label>
+                    <input type="text" id="specialization" placeholder="EX: Computer Science">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Institution <span class="req">*</span></label>
+                    <input type="text" id="institution" placeholder="Enter Your College Name">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>University <span class="req">*</span></label>
+                    <input type="text" id="university" placeholder="Enter Your Affiliated University">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Year of Passing <span class="req">*</span></label>
+                    <input type="number" id="yearOfPassing" placeholder="EX: 2023" min="1950" max="2026">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Percentage / CGPA <span class="req">*</span></label>
+                    <input type="text" id="percentage" placeholder="EX: 85% or 8.5">
+                    <small class="error"></small>
+                </div>
+                <div class="f1">
+                    <label>Mode of Study <span class="req">*</span></label>
+                    <select id="mode">
+                        <option value="" disabled selected>Select</option>
+                        <option>Regular</option>
+                        <option>Distance</option>
+                        <option>Online</option>
+                    </select>
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <div id="educationContainer"></div>
+            <button type="button" class="add-btn" onclick="addEducation()">+ Add Another Qualification (Optional)</button>
+
+            <div class="btn-group">
+                <button type="button" onclick="showStep(2)">Previous</button>
+                <button type="button" onclick="validateEducation()">Preview</button>
+            </div>
         </div>
-        <div class="f1">
-            <label>Employment Type <span class="req">*</span></label>
-            <select class="select" id="employmentType">
-                <option value="" disabled selected>Select</option>
-                <option>Full Time</option>
-                <option>Part Time</option>
-                <option>Contract</option>
-                <option>Intern</option>
-            </select>
-            <small class="error"></small>
-        </div>
-        <div class="f1">
-            <label>Joining Date <span class="req">*</span></label>
-            <input type="date" id="joiningDate" placeholder="Enter Your Joining Date">
-            <small class="error"></small>
-        </div>
-        <div class="f1">
-            <label>Last Working Date <span class="req">*</span></label>
-            <input type="date" id="lastWorkingDate" placeholder="Enter Your Last Working Date">
-            <small class="error"></small>
-        </div>
-        <div class="f1">
-            <label>Skills / Technologies <span class="req">*</span></label>
-            <input type="text" id="skills" placeholder="EX:HTML,CSS">
-            <small class="error"></small>
-        </div>
-        <div class="btn-group">
-            <button type="button" onclick="showStep(1)">Previous</button>
-            <button type="button" onclick="validateExperience()">Next</button>
+
+        <!-- STEP 4 : PREVIEW -->
+        <div class="form" id="step4">
+            <h3>Preview Details</h3>
+
+            <div class="preview-section">
+                <h4>Personal Information</h4>
+                <p><strong>First Name:</strong> <span id="p_firstName">-</span></p>
+                <p><strong>Last Name:</strong> <span id="p_lastName">-</span></p>
+                <p><strong>Email:</strong> <span id="p_email">-</span></p>
+                <p><strong>Mobile:</strong> <span id="p_mobile">-</span></p>
+                <p><strong>Gender:</strong> <span id="p_gender">-</span></p>
+                <p><strong>DOB:</strong> <span id="p_dob">-</span></p>
+                <p><strong>Present Address:</strong> <span id="p_presentAddress">-</span></p>
+                <p><strong>Permanent Address:</strong> <span id="p_permanentAddress">-</span></p>
+            </div>
+
+            <div class="preview-section">
+                <h4>Experience Information</h4>
+                <div id="p_experiences">No experience added</div>
+            </div>
+
+            <div class="preview-section">
+                <h4>Educational Information</h4>
+                <div id="p_educations">No education added</div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" onclick="showStep(3)">Edit</button>
+                <button type="button" onclick="submitOnboarding()">Confirm & Submit</button>
+            </div>
         </div>
     </div>
 
-    <!-- STEP 3 : EDUCATION -->
-    <div class="form" id="step3">
-        <h3>Educational Information</h3>
-        <div class="education-block">
-            <div class="f1">
-                <label>Highest Qualification <span class="req">*</span></label>
-                <select class="select" id="qualification">
-                    <option disabled selected>Select</option>
-                    <option>Diploma</option>
-                    <option>Bachelor's</option>
-                    <option>Master's</option>
-                </select>
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Degree<span class="req">*</span></label>
-                <input type="text" id="degree" placeholder="Enter Your Degree EX:B.Tech/B.A">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Specialization <span class="req">*</span></label>
-                <input type="text" id="specialization" placeholder="Enter Your Specialization">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Institution <span class="req">*</span></label>
-                <input type="text" id="institution" placeholder="Enter Your College Name">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>University <span class="req">*</span></label>
-                <input type="text" id="university" placeholder="Enter Your Affiliated University">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Year of Passing <span class="req">*</span></label>
-                <input type="text" id="yearOfPassing" placeholder="Enter Your Passed Out Year">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Percentage / CGPA <span class="req">*</span></label>
-                <input type="text" id="percentage" placeholder="Enter Your Percentage">
-                <small class="error"></small>
-            </div>
-
-            <div class="f1">
-                <label>Mode of Study <span class="req">*</span></label>
-                <select class="select" id="mode">
-                    <option disabled selected>Select</option>
-                    <option>Regular</option>
-                    <option>Distance</option>
-                    <option>Online</option>
-                </select>
-                <small class="error"></small>
-            </div>
-        </div>
-
-        <div id="educationContainer"></div>
-
-        <button type="button" class="add-btn" onclick="addEducation()">+ Add Another Qualification (Optional)</button>
-
-        <div class="btn-group">
-            <button type="button" onclick="showStep(2)">Previous</button>
-            <button type="button" onclick="validateEducation(); showPreview();">Preview</button>
-        </div>
-    </div>
-
-    <!-- STEP 4 : PREVIEW -->
-    <div class="form" id="step4">
-        <h3>Preview Details</h3>
-
-        <div class="preview-section">
-            <h4>Personal Information</h4>
-            <p><strong>First Name:</strong> <span id="p_firstName"></span></p>
-            <p><strong>Last Name:</strong> <span id="p_lastName"></span></p>
-            <p><strong>Email:</strong> <span id="p_email"></span></p>
-            <p><strong>Mobile:</strong> <span id="p_mobile"></span></p>
-            <p><strong>DOB:</strong> <span id="p_dob"></span></p>
-            <p><strong>Present Address:</strong> <span id="p_presentAddress"></span></p>
-            <p><strong>Permanent Address:</strong> <span id="p_permanentAddress"></span></p>
-        </div>
-
-        <div class="preview-section">
-            <h4>Experience Information</h4>
-            <p><strong>Total Experience:</strong> <span id="p_totalExperience"></span></p>
-            <p><strong>Company Name:</strong> <span id="p_companyName"></span></p>
-            <p><strong>Designation:</strong> <span id="p_designation"></span></p>
-            <p><strong>Employment Type:</strong> <span id="p_employmentType"></span></p>
-            <p><strong>Joining Date:</strong> <span id="p_joiningDate"></span></p>
-            <p><strong>Last Working Date:</strong> <span id="p_lastWorkingDate"></span></p>
-            <p><strong>Skills:</strong> <span id="p_skills"></span></p>
-        </div>
-
-        <div class="preview-section">
-            <h4>Educational Information</h4>
-            <p><strong>Qualification:</strong> <span id="p_qualification"></span></p>
-            <p><strong>Degree:</strong> <span id="p_degree"></span></p>
-            <p><strong>Specialization:</strong> <span id="p_specialization"></span></p>
-            <p><strong>Institution:</strong> <span id="p_institution"></span></p>
-            <p><strong>University:</strong> <span id="p_university"></span></p>
-            <p><strong>Year of Passing:</strong> <span id="p_yearOfPassing"></span></p>
-            <p><strong>Percentage / CGPA:</strong> <span id="p_percentage"></span></p>
-            <p><strong>Mode:</strong> <span id="p_mode"></span></p>
-        </div>
-
-        <div class="btn-group">
-            <button type="button" onclick="showStep(3)">Edit</button>
-            <button type="button" onclick="submitOnboarding()">Confirm & Submit</button>
-        </div>
-    </div>
-
-</div>
-
-<script src="stepform.js"></script>
+    <script src="stepform.js"></script>
 </body>
 </html>
